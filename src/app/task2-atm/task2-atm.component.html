@@ -1,0 +1,45 @@
+<div class="jumbotron">
+    <h2>Solution</h2>
+    <hr>
+    <h3>Current Available Denomination in Machine</h3>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+      <table class="table table-striped">
+        <tbody formArrayName="banknotesCt">
+          <tr *ngFor="let banknote of banknoteValues; let i = index">
+            <th>{{ banknote }}</th>
+            <td [attr.data-ad]="banknote">{{ banknotesCount[i] }}</td>
+            <td>|</td>
+            <td>
+              <input [attr.data-ad]="banknote" [formControlName]="i">
+            </td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <td id="td-total">{{ getTotalBanknotes() }}</td>
+            <td>|</td>
+            <td>
+              <button class="btn btn-primary" id="btn-deposit" type="submit">Deposit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <hr>
+    <div class="input-group">
+      <input id="inp-withdraw" type="text" class="form-control" placeholder="Enter amount for withdrawal" value="" [(ngModel)]="withdrawAmount">
+      <span class="input-group-btn">
+        <button id="btn-withdraw" class="btn btn-success" type="button" (click)="performWithdrawal()">Withdraw!</button>
+      </span>
+    </div>
+    <hr>
+    <h3>Log</h3>
+    <div id="log-holder">
+      <div *ngFor="let log of logs" [ngClass]="getLogClass(log)">
+        {{ log.message }}<br>
+        <small>{{ log.timestamp | date: 'medium' }}</small>
+      </div>
+    </div>
+    
+    
+    
+  </div>

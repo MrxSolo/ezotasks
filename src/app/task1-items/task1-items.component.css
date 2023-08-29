@@ -1,0 +1,27 @@
+.fixed-card-size {
+    width: 100%;
+    height: auto; 
+  }
+  
+  .card-img-container {
+    position: relative;
+    height: 0; 
+    padding-bottom: 100%;
+    overflow: hidden;
+  }
+  
+  .img-full-size {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .title-fixed-size {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .price-fixed-size {
+    font-size: 1rem;
+  }

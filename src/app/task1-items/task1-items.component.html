@@ -1,0 +1,17 @@
+<div class="container mt-4">
+    <div class="row">
+      <div *ngFor="let item of items" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card fixed-card-size">
+          <div class="card-img-container">
+            <img [src]="item.url" alt="{{ item.itemName }}" class="card-img-top img-fluid img-full-size">
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-column">
+              <h5 class="card-title title-fixed-size">{{ item.itemName }}</h5>
+              <p class="card-text price-fixed-size">${{ item.itemPrice }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
